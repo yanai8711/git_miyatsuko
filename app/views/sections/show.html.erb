@@ -1,0 +1,17 @@
+<h2 data-component='base/h2' class='contenteditable'>部署情報</h2>
+<div class='row clearfix' data-component='grid/col2'>
+  <div class='col-md-3 column x-content'>
+    <p data-component='base/paragraph' class='contenteditable'>部署ID</p>
+  </div>
+  <div class='col-md-9 column x-content'>
+  </div>
+</div>
+<div class='row clearfix' data-component='grid/col2'>
+  <div class='col-md-3 column x-content'>
+    <p data-component='base/paragraph' class='contenteditable'>部署名</p>
+  </div>
+  <div class='col-md-9 column x-content'>
+  </div>
+</div>
+<%= link_to("編集", edit_section_path(@section), class: "btn btn-sm btn-default contenteditable" , "data-component" => "data/link") %>
+<%= link_to("戻る<br></br>", sections_path, class: "btn btn-sm btn-default contenteditable" , data: { component: "base/anchor" } ) %>

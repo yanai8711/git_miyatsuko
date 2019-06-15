@@ -1,0 +1,118 @@
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from load at C:/Ruby24-x64/bin/rake:23)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (79.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (98.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UpdateSchema1 (20190308234949)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "employees" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "emp_id" integer, "name" integer, "age" integer, "address" integer, "busho" integer, "created_at" datetime, "updated_at" datetime)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190308234949"]]
+  [1m[35m (84.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-09 00:25:17.489774"], ["updated_at", "2019-03-09 00:25:17.489774"]]
+  [1m[35m (98.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from instance_eval at C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activesupport-5.2.2/lib/active_support/lazy_load_hooks.rb:71)
+Started GET "/" for ::1 at 2019-03-09 09:25:48 +0900
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  Rendered routes/index.html.erb within layouts/application (8.0ms)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/rails/miyatsuko_test1/app/assets/stylesheets/_variables.css.scss to C:/rails/miyatsuko_test1/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts_application_html_erb__292140823_55824460 at C:/rails/miyatsuko_test1/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/rails/miyatsuko_test1/app/assets/stylesheets/_bootstrap_overrides.css.scss to C:/rails/miyatsuko_test1/app/assets/stylesheets/_bootstrap_overrides.scss. (called from _app_views_layouts_application_html_erb__292140823_55824460 at C:/rails/miyatsuko_test1/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/rails/miyatsuko_test1/app/assets/stylesheets/_variables.css.scss to C:/rails/miyatsuko_test1/app/assets/stylesheets/_variables.scss. (called from _app_views_layouts_application_html_erb__292140823_55824460 at C:/rails/miyatsuko_test1/app/views/layouts/application.html.erb:5)
+DEPRECATION WARNING: Extra .css in SCSS file is unnecessary. Rename C:/rails/miyatsuko_test1/app/assets/stylesheets/_bootstrap_overrides.css.scss to C:/rails/miyatsuko_test1/app/assets/stylesheets/_bootstrap_overrides.scss. (called from _app_views_layouts_application_html_erb__292140823_55824460 at C:/rails/miyatsuko_test1/app/views/layouts/application.html.erb:5)
+Completed 200 OK in 6150ms (Views: 6135.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-09 09:25:57 +0900
+Processing by RoutesController#index as HTML
+  Rendering routes/index.html.erb within layouts/application
+  Rendered routes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 405ms (Views: 386.2ms)
+
+
+Started GET "/employees" for ::1 at 2019-03-09 09:26:00 +0900
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (2.6ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (15.4ms)
+Started GET "/employees" for ::1 at 2019-03-09 09:26:00 +0900
+Processing by EmployeesController#index as HTML
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  Rendered employees/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 1067ms (Views: 989.6ms | ActiveRecord: 3.6ms)
+
+
+Completed 200 OK in 850ms (Views: 807.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/employees/new" for ::1 at 2019-03-09 09:26:41 +0900
+Processing by EmployeesController#new as HTML
+  Rendering employees/new.html.erb within layouts/application
+Started GET "/employees/new" for ::1 at 2019-03-09 09:26:41 +0900
+Processing by EmployeesController#new as HTML
+  Rendered employees/new.html.erb within layouts/application (171.0ms)
+  Rendering employees/new.html.erb within layouts/application
+  Rendered employees/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 838ms (Views: 819.7ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 654ms (Views: 639.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/employees" for ::1 at 2019-03-09 09:31:07 +0900
+Processing by EmployeesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZfsQl6RjmCUuXGO98mOMy3IUlx1vAMu0AOSO82ohaV3Pd3ewzffAARnXYDWKxHN5HJE4ryZN/UTRqg+ih6jltw==", "employee"=>{"emp_id"=>"10001", "name"=>"", "age"=>"66", "address"=>"", "busho"=>""}, "commit"=>"保存"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (1.7ms)[0m  [1m[32mINSERT INTO "employees" ("emp_id", "age", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["emp_id", 10001], ["age", 66], ["created_at", "2019-03-09 00:31:07.300413"], ["updated_at", "2019-03-09 00:31:07.300413"]]
+  [1m[35m (83.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/employees/1
+Completed 302 Found in 101ms (ActiveRecord: 85.1ms)
+
+
+Started GET "/employees/1" for ::1 at 2019-03-09 09:31:07 +0900
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering employees/show.html.erb within layouts/application
+  Rendered employees/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 571ms (Views: 515.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/employees/1/edit" for ::1 at 2019-03-09 09:31:16 +0900
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT  "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering employees/edit.html.erb within layouts/application
+  Rendered employees/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 363ms (Views: 347.5ms | ActiveRecord: 0.4ms)
+
+
