@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+ 
+ # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :form_url
+ 
+before_action :require_login
+ helper_method :form_url
 
   protected
 
@@ -28,4 +31,13 @@ class ApplicationController < ActionController::Base
       @_preview ? File.join('preview', action_name) : action_name
     end
 
+end
+
+private
+def require_login
+if session[:user_name]
+else
+render("session/new")
+end
+end
 end

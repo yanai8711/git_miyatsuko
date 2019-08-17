@@ -1,4 +1,5 @@
 class SessionController < ApplicationController
+skip_before_action :require_login
 
  def new  #ログインページを表示
  end
@@ -16,6 +17,13 @@ class SessionController < ApplicationController
     session[:user_name] = nil
     redirect_to("/login")    #ログインページへ画面遷移
   end
+ end
+  
+ def destroy    #セッション情報を破棄（ログアウト）
+  session[:user_name] = nil
+  redirect_to("/login")
+ end
+
  end
   
  def destroy    #セッション情報を破棄（ログアウト）
